@@ -11,15 +11,13 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class RecycleViewDivider
 /**
  * 默认分割线：高度为2px，颜色为灰色
  *
  * @param context
  * @param orientation 列表方向
  */
-(context: Context, private val mOrientation: Int//列表的方向：LinearLayoutManager.VERTICAL或LinearLayoutManager.HORIZONTAL
-) : RecyclerView.ItemDecoration() {
+class RecycleViewDivider (context: Context, private val mOrientation: Int) : RecyclerView.ItemDecoration() {
 
     private var mPaint: Paint? = null
     private var mDivider: Drawable? = null

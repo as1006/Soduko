@@ -11,8 +11,6 @@ public class Soduko {
         Wrong
     }
 
-    private final static String tag = Soduko.class.getSimpleName();
-
     private final int[][] soduko = new int[9][9];
     private final int[][] answer = new int[9][9];
     private final Soduko.State[][] state = new Soduko.State[9][9];

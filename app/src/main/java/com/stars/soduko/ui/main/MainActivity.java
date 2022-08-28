@@ -7,22 +7,24 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.CacheDiskUtils;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.SizeUtils;
 import com.blankj.utilcode.util.VibrateUtils;
 import com.stars.base.ui.StarActivity;
-import com.stars.soduko.model.SodukoPuzzle;
-import com.stars.soduko.ui.level.LevelActivity;
 import com.stars.soduko.R;
 import com.stars.soduko.model.Soduko;
+import com.stars.soduko.model.SodukoPuzzle;
+import com.stars.soduko.ui.level.LevelActivity;
 import com.stars.soduko.ui.test.SodukoTestActivity;
 import com.stars.soduko.viewmodel.SodukoPuzzleViewModel;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-
+/**
+ * 主页，包括答题等部分
+ */
 public class MainActivity extends StarActivity {
 
     private final static int LEVEL_REQUEST_CODE = 100001;

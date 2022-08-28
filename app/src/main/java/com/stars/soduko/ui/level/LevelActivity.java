@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.stars.base.ui.StarActivity;
-import com.stars.lego.adapter.bean.BaseBeanAdapter;
-import com.stars.lego.adapter.bean.BaseBeanItem;
-import com.stars.lego.adapter.bean.ItemBuilder;
-import com.stars.lego.adapter.bridge.BridgeEntity;
-import com.stars.lego.adapter.core.BaseItem;
-import com.stars.lego.adapter.core.BaseViewHolder;
-import com.stars.lego.layoutcenter.LayoutCenter;
+import com.stars.kit.lego.adapter.bean.BaseBeanAdapter;
+import com.stars.kit.lego.adapter.bean.BaseBeanItem;
+import com.stars.kit.lego.adapter.bean.ItemBuilder;
+import com.stars.kit.lego.adapter.bridge.BridgeEntity;
+import com.stars.kit.lego.adapter.core.BaseItem;
+import com.stars.kit.lego.adapter.core.BaseViewHolder;
+import com.stars.kit.lego.layoutcenter.LayoutCenter;
 import com.stars.soduko.R;
 import com.stars.soduko.RecycleViewDivider;
 import com.stars.soduko.model.SodukoPuzzle;
@@ -74,7 +74,7 @@ public class LevelActivity extends StarActivity {
     }
 
 
-    public class PuzzleItem extends BaseBeanItem<SodukoPuzzle> {
+    public static class PuzzleItem extends BaseBeanItem<SodukoPuzzle> {
 
         public PuzzleItem(Context context, SodukoPuzzle bean) {
             super(context, bean);
@@ -87,7 +87,6 @@ public class LevelActivity extends StarActivity {
 
         @Override
         public void onClick() {
-
             publishEvent("Puzzle_Click", bean);
         }
 
