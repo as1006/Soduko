@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/layout_soduko_row_1"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_2"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_3"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_4"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_5"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_6"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_7"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_8"
+        layout="@layout/layout_soduko_row"/>
+
+    <include
+        android:id="@+id/layout_soduko_row_9"
+        layout="@layout/layout_soduko_row"/>
+
+
+</LinearLayout>

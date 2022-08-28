@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="soduko_border_thick">1dp</dimen>
+    <dimen name="soduko_border_thin">0.5dp</dimen>
+</resources>
