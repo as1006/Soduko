@@ -88,3 +88,6 @@ lint/tmp/
 # Github Keys
 github.properties
 
+# Other
+.DS_Store
+

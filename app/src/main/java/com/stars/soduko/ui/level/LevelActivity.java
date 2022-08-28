@@ -26,43 +26,36 @@ import com.stars.soduko.RecycleViewDivider;
 import com.stars.soduko.model.SodukoPuzzle;
 import com.stars.soduko.viewmodel.SodukoPuzzleViewModel;
 
-public class LevelActivity extends StarActivity {
+import java.util.List;
 
-    private SodukoPuzzleViewModel mPuzzleViewModel;
+
+/**
+ * 数独关卡选择页面
+ */
+public class LevelActivity extends StarActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //获取所有的Puzzles
+        List<SodukoPuzzle> puzzles = getApplicationScopeViewModel(SodukoPuzzleViewModel.class).getAllPuzzles();
+
         setContentView(R.layout.activity_level);
-
-        mPuzzleViewModel = getApplicationScopeViewModel(SodukoPuzzleViewModel.class);
-
-        findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
-        LayoutCenter.getInstance().registerItemBuilder(SodukoPuzzle.class, new ItemBuilder<SodukoPuzzle>() {
-            @Override
-            public BaseItem build(Context context, SodukoPuzzle bean) {
-                return new PuzzleItem(context, bean);
-            }
-        });
+        findViewById(R.id.iv_back).setOnClickListener(view -> finish());
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new RecycleViewDivider(this, LinearLayoutManager.VERTICAL));
 
         BaseBeanAdapter adapter = new BaseBeanAdapter(this);
-        adapter.addBeans(mPuzzleViewModel.getAllPuzzles());
+        adapter.addBeans(puzzles);
         recyclerView.setAdapter(adapter);
 
         adapter.getItemBridge().subscribe("Puzzle_Click", new BridgeEntity() {
             @Override
             public void onBridge(Object sender, String event, Object args) {
-                int index = mPuzzleViewModel.getAllPuzzles().indexOf(args);
+                int index = puzzles.indexOf(args);
                 if (index != -1) {
                     Intent intent = new Intent();
                     intent.putExtra("Puzzle", index);

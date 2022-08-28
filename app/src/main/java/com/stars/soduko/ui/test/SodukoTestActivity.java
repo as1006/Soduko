@@ -49,7 +49,7 @@ public class SodukoTestActivity extends StarActivity {
             digitView.setText(digit+"");
             digitView.setOnClickListener(view -> {
                 VibrateUtils.vibrate(10);
-                mViewModel.onDigitClicked(digit);
+//                mViewModel.onDigitClicked(digit);
                 refresh(mSoduko);
             });
         }
@@ -63,7 +63,7 @@ public class SodukoTestActivity extends StarActivity {
             digitView.setText(number+"");
             digitView.setOnClickListener(view -> {
                 VibrateUtils.vibrate(10);
-                mViewModel.onPossibleClicked(number);
+//                mViewModel.onPossibleClicked(number);
             });
         }
 
@@ -82,7 +82,7 @@ public class SodukoTestActivity extends StarActivity {
     private void refreshPuzzle(SodukoPuzzle sodukoPuzzle) {
         mSoduko = new Soduko();
         mSoduko.init(sodukoPuzzle.puzzle, sodukoPuzzle.answer);
-        mViewModel.init(mSoduko, mSodukoView);
+//        mViewModel.init( mSodukoView);
         refresh(mSoduko);
     }
 
